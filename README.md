@@ -422,7 +422,7 @@ Este proyecto es de código abierto bajo la licencia MIT.
 
 ## Autor
 
-**Sebastian Margimenez**
+**Sebastián Omar Giménez**
 - GitHub: [@sebastianomargimenez](https://github.com/sebastianomargimenez)
 - Proyecto: [videoclub-api](https://github.com/sebastianomargimenez/videoclub-api)
 - Demo Live: [https://videoclub-api.onrender.com](https://videoclub-api.onrender.com)
