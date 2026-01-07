@@ -1,6 +1,18 @@
 # Videoclub API
 
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![Express](https://img.shields.io/badge/Express-5.x-blue)
+![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-success)
+![License](https://img.shields.io/badge/license-ISC-blue)
+![Deploy](https://img.shields.io/badge/deploy-Render-purple)
+
 API REST profesional para sistema de gestión de videoclub, construida con Node.js, Express y Supabase.
+
+**🌐 API en Producción**: [https://videoclub-api.onrender.com](https://videoclub-api.onrender.com)
+
+**📚 Prueba los endpoints**:
+- Health: [/health](https://videoclub-api.onrender.com/health)
+- Películas: [/api/v1/movies](https://videoclub-api.onrender.com/api/v1/movies)
 
 ## Características
 
@@ -36,7 +48,7 @@ API REST profesional para sistema de gestión de videoclub, construida con Node.
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/videoclub-api.git
+git clone https://github.com/sebastianomargimenez/videoclub-api.git
 cd videoclub-api
 ```
 
@@ -296,6 +308,27 @@ La API utiliza un sistema centralizado de manejo de errores con códigos HTTP es
 }
 ```
 
+## Demo en Producción
+
+La API está desplegada y disponible en: **https://videoclub-api.onrender.com**
+
+### Endpoints de Prueba
+
+Puedes probar estos endpoints directamente desde tu navegador o con cURL:
+
+```bash
+# Health check
+curl https://videoclub-api.onrender.com/health
+
+# Listar todas las películas (público)
+curl https://videoclub-api.onrender.com/api/v1/movies
+
+# Registrar un nuevo usuario
+curl -X POST https://videoclub-api.onrender.com/api/v1/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"test123","nombre":"Test User"}'
+```
+
 ## Deployment en Render
 
 ### Pasos para Desplegar
@@ -332,7 +365,7 @@ La API utiliza un sistema centralizado de manejo de errores con códigos HTTP es
 
 6. **Verificar deployment**
    - Una vez completado, obtendrás una URL como: `https://videoclub-api.onrender.com`
-   - Prueba: `https://tu-app.onrender.com/health`
+   - Prueba el health endpoint para confirmar que funciona
 
 ### Notas importantes
 
@@ -341,11 +374,11 @@ La API utiliza un sistema centralizado de manejo de errores con códigos HTTP es
 - **Auto-deploy**: Cada push a `main` desplegará automáticamente
 - **Logs**: Disponibles en tiempo real en el dashboard de Render
 
-### Actualizar Supabase
+### Actualizar Supabase (Opcional)
 
-Agrega la URL de Render a los "Allowed URLs" en Supabase:
+Si configuras CORS estricto, agrega la URL de Render a los "Allowed URLs" en Supabase:
 1. Ve a Authentication → URL Configuration
-2. Agrega: `https://tu-app.onrender.com`
+2. Agrega: `https://videoclub-api.onrender.com`
 
 ## Testing
 
@@ -367,11 +400,11 @@ Puedes usar herramientas como Postman, Thunder Client o cURL para probar la API.
 - [ ] Tests automatizados (Jest + Supertest)
 - [ ] Rate limiting con express-rate-limit
 - [ ] Logging avanzado con Winston
-- [ ] Paginación en listados
-- [ ] Filtros y búsqueda avanzada
-- [ ] Sistema de notificaciones
-- [ ] Deploy en Railway/Render
+- [ ] Filtros y búsqueda avanzada de películas
+- [ ] Sistema de notificaciones por email
 - [ ] Documentación con Swagger/OpenAPI
+- [ ] Frontend con React/Next.js
+- [ ] Sistema de multas por retraso
 
 ## Contribución
 
@@ -389,8 +422,11 @@ Este proyecto es de código abierto bajo la licencia MIT.
 
 ## Autor
 
-**Sebastian** - [Tu GitHub](https://github.com/tu-usuario)
+**Sebastian Margimenez**
+- GitHub: [@sebastianomargimenez](https://github.com/sebastianomargimenez)
+- Proyecto: [videoclub-api](https://github.com/sebastianomargimenez/videoclub-api)
+- Demo Live: [https://videoclub-api.onrender.com](https://videoclub-api.onrender.com)
 
 ---
 
-**Desarrollado con Node.js + Express + Supabase** 🎬🍿
+**Desarrollado con Node.js + Express + Supabase** | Desplegado en Render 🎬🍿
