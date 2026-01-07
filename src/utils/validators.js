@@ -25,6 +25,28 @@ const movieSchema = Joi.object({
     .messages({
       'number.base': 'El precio debe ser un número',
       'number.positive': 'El precio debe ser mayor a 0'
+    }),
+  // Campos opcionales nuevos
+  poster_url: Joi.string().uri().allow(null, '')
+    .messages({
+      'string.uri': 'La URL del poster debe ser válida'
+    }),
+  director: Joi.string().max(100).allow(null, '')
+    .messages({
+      'string.max': 'El nombre del director no puede exceder 100 caracteres'
+    }),
+  anio: Joi.number().integer().min(1888).max(new Date().getFullYear() + 5).allow(null)
+    .messages({
+      'number.min': 'El año debe ser 1888 o posterior',
+      'number.max': 'El año no puede ser mayor al actual + 5'
+    }),
+  duracion: Joi.number().integer().min(1).allow(null)
+    .messages({
+      'number.min': 'La duración debe ser al menos 1 minuto'
+    }),
+  descripcion: Joi.string().max(1000).allow(null, '')
+    .messages({
+      'string.max': 'La descripción no puede exceder 1000 caracteres'
     })
 });
 

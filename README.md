@@ -184,9 +184,21 @@ Content-Type: application/json
   "genero": "Ciencia Ficción",
   "stock_total": 5,
   "stock_disponible": 5,
-  "precio_alquiler": 3.99
+  "precio_alquiler": 3.99,
+  "poster_url": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+  "director": "Lana Wachowski, Lilly Wachowski",
+  "anio": 1999,
+  "duracion": 136,
+  "descripcion": "Un programador descubre que la realidad que conoce es una simulación."
 }
 ```
+
+**Campos opcionales:**
+- `poster_url`: URL de la imagen del poster (debe ser URI válida)
+- `director`: Nombre del director (máx. 100 caracteres)
+- `anio`: Año de estreno (entre 1888 y año actual + 5)
+- `duracion`: Duración en minutos (mínimo 1)
+- `descripcion`: Descripción de la película (máx. 1000 caracteres)
 
 #### Actualizar película (Admin)
 ```http

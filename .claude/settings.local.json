@@ -14,7 +14,8 @@
       "Bash(findstr:*)",
       "Bash(node src/server.js:*)",
       "Bash(node update-admin.js:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(node make-admin.js:*)"
     ]
   }
 }
