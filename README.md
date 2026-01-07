@@ -296,6 +296,57 @@ La API utiliza un sistema centralizado de manejo de errores con códigos HTTP es
 }
 ```
 
+## Deployment en Render
+
+### Pasos para Desplegar
+
+1. **Crear cuenta en Render**
+   - Ve a [render.com](https://render.com) y crea una cuenta (puedes usar GitHub)
+
+2. **Conectar repositorio**
+   - En el dashboard, haz click en "New +" → "Web Service"
+   - Conecta tu cuenta de GitHub
+   - Selecciona el repositorio `videoclub-api`
+
+3. **Configurar servicio**
+   - Render detectará automáticamente el `render.yaml`
+   - Verifica la configuración:
+     - **Build Command**: `npm install`
+     - **Start Command**: `npm start`
+     - **Environment**: `node`
+
+4. **Configurar variables de entorno**
+   - En la sección "Environment", agrega:
+     ```
+     NODE_ENV=production
+     PORT=3001
+     SUPABASE_URL=tu-url-de-supabase
+     SUPABASE_SERVICE_ROLE_KEY=tu-service-role-key
+     FRONTEND_URL=*
+     ```
+
+5. **Deploy**
+   - Click en "Create Web Service"
+   - Render comenzará el build automáticamente
+   - Espera 2-3 minutos
+
+6. **Verificar deployment**
+   - Una vez completado, obtendrás una URL como: `https://videoclub-api.onrender.com`
+   - Prueba: `https://tu-app.onrender.com/health`
+
+### Notas importantes
+
+- **Plan gratuito**: El servicio se duerme después de 15 minutos de inactividad
+- **Primera request**: Puede tardar 30-60 segundos en despertar
+- **Auto-deploy**: Cada push a `main` desplegará automáticamente
+- **Logs**: Disponibles en tiempo real en el dashboard de Render
+
+### Actualizar Supabase
+
+Agrega la URL de Render a los "Allowed URLs" en Supabase:
+1. Ve a Authentication → URL Configuration
+2. Agrega: `https://tu-app.onrender.com`
+
 ## Testing
 
 ### Test Manual
